@@ -6,7 +6,7 @@ const Target = ({reference, size, prediction}) => {
     const t = (prediction.bbox[1] * reference.imgRefHeight) / size.imgHeight;
     const w = (prediction.bbox[2] * reference.imgRefWidth ) / size.imgWidth;
     const h = (prediction.bbox[3] * reference.imgRefHeight ) / size.imgHeight;
-    //const predict = prediction.class
+    const predict = prediction.class
     //const predictionAccuracy = prediction.score * 100
     console.log(l, t, w)
 
@@ -24,7 +24,7 @@ const Target = ({reference, size, prediction}) => {
 
     return (
          <div style={targetStyle}>
-        
+             <span style={{color:"red"}}>{predict}</span>
         </div>
     )
 }
